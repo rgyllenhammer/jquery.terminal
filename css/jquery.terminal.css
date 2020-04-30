@@ -142,15 +142,15 @@ body.full-screen-terminal .terminal {
      * shorter and simple solution
      * it's hard to overwrite long :not selector (:not(a span) don't work)
      */
-    color: #0F60FF !important;
-    --color: var(--link-color, #0F60FF);
-    color: var(--link-color, #0F60FF) !important;
+    color: hotpink !important; /* changed */
+    --color: var(--link-color, hotpink); /* changed */
+    color: var(--link-color, hotpink) !important;
     text-decoration: underline;
 }
 .terminal .terminal-output > :not(.raw) a[href]:hover span,
 .cmd a[href]:hover span {
-    background-color: #0F60FF !important;
-    background-color: var(--link-color, #0F60FF) !important;
+    background-color: hotpink !important; /* changed */
+    background-color: var(--link-color, hotpink) !important; /* changed */
     color: var(--background, #000) !important;
     text-decoration: none;
 }
@@ -311,7 +311,7 @@ terminal .terminal-output > div {
     --original-color: var(--color, #aaa);
 }
 .cmd a[href] {
-    --original-color: var(--link-color, #0F60FF);
+    --original-color: var(--link-color, hotpink); /* changed */
 }
 /* DEFAULT ANIMATION */
 @-webkit-keyframes terminal-blink {
@@ -604,7 +604,7 @@ terminal .terminal-output > div {
 .terminal .terminal-output > :not(.raw) .terminal-error,
 .terminal .terminal-output > :not(.raw) .terminal-error * {
     color: red;
-    color: var(--error-color, red);
+    color: var(--error-color, hotpink);
 }
 .tilda {
     position: fixed;
@@ -625,20 +625,20 @@ terminal .terminal-output > div {
     clear: both;
 }
 .terminal .terminal-output > :not(.raw) a[href], .cmd a[href] {
-    color: #0F60FF;
-    color: var(--link-color, #0F60FF);
+    color: hotpink;  /* changed */
+    color: var(--link-color, hotpink); /* changed */
     cursor: pointer;
 }
 .cmd a[href]:not(.terminal-inverted),
 .terminal .terminal-output > :not(.raw) a[href]:not(.terminal-inverted) {
-    --color: var(--link-color, #0F60FF);
+    --color: var(--link-color, hotpink); /* changed */
 }
 .terminal .terminal-output > :not(.raw) a[href].terminal-inverted {
     background: var(--color, #ccc);
 }
 .terminal .terminal-output > :not(.raw) a[href]:hover, .cmd a[href]:hover {
-    background-color: #0F60FF;
-    background-color: var(--link-color, #0F60FF);
+    background-color: hotpink; /* changed */
+    background-color: var(--link-color, hotpink); /* changed */
     color: var(--background, #000) !important;
     text-decoration: none;
 }
@@ -940,4 +940,13 @@ terminal .terminal-output > div {
     z-index: 500;
     color: transparent;
     opacity: 0.01;
+}
+
+.terminal {
+  --color: white;
+  --background: blue;
+}
+
+.prompt{
+  --color: hotpink;
 }
